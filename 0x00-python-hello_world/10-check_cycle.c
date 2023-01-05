@@ -15,6 +15,9 @@ int check_cycle(listint_t *list)
 	headcopy = list;
 	list = list->next;
 
+	if (list == NULL || list->next == NULL)
+		return (0);
+
 	while (list != NULL)
 	{
 		if (list == headcopy)
