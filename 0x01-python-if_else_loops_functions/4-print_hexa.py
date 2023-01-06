@@ -1,4 +1,4 @@
 #!/usr/bin/python3
 
 for number in range(0, 99):
-    print(f"{number:d} = 0x{number:x}")
+    print("{0:d} = 0x{0:x}".format(number))
