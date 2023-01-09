@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * is_palindrome - Write a function in C that checks if a singly
+ * i_palindrome - Write a function in C that checks if a singly
  * linked list is a palindrome
  * @head: Pointer to linked lists
  *
@@ -8,33 +8,33 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current, *head2;
-	int node = 0, divide, i = 0;
+	listint_t *current;
+	int nodes = 0, i = 0;
+
+	if (*head == NULL)
+		return (1);
 
 	current = *head;
 	while (current != NULL)
 	{
-		node++;
+		nodes++;
 		current = current->next;
 	}
-	divide = node / 2;
-	head2 = *head;
-	for (i = 0; i < divide; i++)
-		head2 = head2->next;
 
-	int array[divide];
+	int array[nodes];
 
-	for (i = 0; i < divide; i++)
-	{
-		array[i] = head2->n;
-		head2 = head2->next;
-	}
 	current = *head;
-	for (divide = divide - 1; divide; divide--)
+	for (i = 0; i < nodes; i++)
 	{
-		if (current->n != array[divide])
-			return (0);
+		array[i] = current->n;
 		current = current->next;
+	}
+
+	for (i = 0; i < nodes; i++)
+	{
+		if (array[i] != array[nodes - 1])
+			return (0);
+		nodes--;
 	}
 	return (1);
 }
