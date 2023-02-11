@@ -46,4 +46,4 @@ class Student:
         """
 
         for k, v in json.items():
-            setAttr(self, k, v)
+            setattr(self, k, v)
