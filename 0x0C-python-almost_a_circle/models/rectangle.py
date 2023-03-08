@@ -167,6 +167,18 @@ class Rectangle(Base):
                 elif k == "y":
                     self.y = v
 
+    def to_dictionary(self):
+        """
+        This method returns the dictionary representation of the object
+        """
+
+        return {
+                "id": self.id,
+                "size": self.height,
+                "x": self.x,
+                "y": self.y
+                }
+
     def __str__(self):
         """
         Return the print() and str() representation of the square object
