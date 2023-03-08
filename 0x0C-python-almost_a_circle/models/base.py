@@ -91,8 +91,8 @@ class Base:
             else:
                 new = cls(1)
 
-                new.update(**dictionary)
-                return new
+            new.update(**dictionary)
+            return new
 
     @classmethod
     def load_from_file(cls):
