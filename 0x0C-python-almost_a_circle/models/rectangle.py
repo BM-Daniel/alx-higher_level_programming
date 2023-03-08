@@ -36,7 +36,6 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
-
     @property
     def width(self):
         """Setter and getter for the rectangle's width"""
@@ -51,7 +50,6 @@ class Rectangle(Base):
             raise ValueError("width must be > 0")
 
         self.__width = value
-
 
     @property
     def height(self):
@@ -68,14 +66,13 @@ class Rectangle(Base):
 
         self.__height = value
 
-
     @property
     def x(self):
         """Setter and getter for x-coordinate"""
         return self.__x
 
     @x.setter
-    def  x(self, value):
+    def x(self, value):
         if type(value) != int:
             raise TypeError("x must be an integer")
 
@@ -83,7 +80,6 @@ class Rectangle(Base):
             raise ValueError("x must be >= 0")
 
         self.__x = value
-
 
     @property
     def y(self):
@@ -99,3 +95,23 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
 
         self.__y = value
+
+    def area(self):
+        """
+        A method to return the area value of the rectangle instance
+        """
+        return self.height * self.width
+
+    def display(self):
+        """
+        Prints out the rectangle using the character #
+        """
+        if self.width == 0 or self.height == 0:
+            print("")
+            return
+
+        [print("") for y in range(self.y)]
+        for h in range(self.height):
+            [print(" ", end="") for x in range(self.x)]
+            [print("#", end="") for w in range(self.width)]
+            print("")
