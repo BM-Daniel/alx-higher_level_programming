@@ -168,5 +168,8 @@ class Rectangle(Base):
                     self.y = v
 
     def __str__(self):
+        """
+        Return the print() and str() representation of the square object
+        """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y,
                                                        self.width, self.height)
