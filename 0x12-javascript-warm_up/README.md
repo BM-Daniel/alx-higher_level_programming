@@ -42,6 +42,7 @@ $ sudo apt-get install -y nodejs
 ### Install semi-standard
 
 [Documentation](https://intranet.alxswe.com/rltoken/35q5Pc6A6KWPyd3kGeRQFg)
+
 `
 $ sudo npm install semistandard --global
 `
