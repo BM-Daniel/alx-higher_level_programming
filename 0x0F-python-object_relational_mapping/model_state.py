@@ -16,9 +16,10 @@ class State(Base):
     """
     Class to represent a sql table called states
 
-    __tablename__ (str): Name of the sql table
-    id (sqlalchemy.Integer): The id of the state
-    name (sqlalchemy.String): The name of the state
+    Attributes:
+        __tablename__ (str): Name of the sql table
+        id (sqlalchemy.Integer): The id of the state
+        name (sqlalchemy.String): The name of the state
     """
 
     __tablename__ = "states"
