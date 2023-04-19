@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-prints all City objects from the database hbtn_0e_14_usa: 
+prints all City objects from the database hbtn_0e_14_usa
 
 Usage: ./file_name.py <mysql username> <mysql password> <database name>
 """
@@ -20,7 +20,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    data = session.query(City, State).filter(City.state_id == State.id).order_by(City.id)
+    data = session.query(City, State).filter(City.state_id == State.id)\
+        .order_by(City.id)
 
     for city, state in data:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
