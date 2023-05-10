@@ -5,19 +5,16 @@ FROM `tv_genres` AS genre
 INNER JOIN `tv_show_genres` AS show
 ON genre.`id` = show.`genre_id`
 
-INNER JOIN `tv_shows` AS tv
-ON show.`show_id` = tv.`id`
-
-WHERE genre.`name` NOT IN (
-    SELECT `name`
+INNER JOIN `tv_shows` AS t
+ON show.`show_id` = t.`id`
+WHERE genre.`name` NOT IN
+    (SELECT `name`
     FROM `tv_genres` AS genre
     INNER JOIN `tv_show_genres` AS show
     ON genre.`id` = show.`genre_id`
 
-    INNER JOIN `tv_shows` AS tv
-    ON show.`show_id` = tv.`id`
-
-    WHERE tv.`title` = "Dexter"
-)
-
-ORDER BY genre.`name`;
+    INNER JOIN `tv_shows` AS t
+    ON show.`show_id` = t.`id`
+    WHERE t.`title` = "Dexter")
+    
+ ORDER BY genre.`name`;
