@@ -9,6 +9,7 @@ You must use the module SQLAlchemy
 from model_state import Base
 from sqlalchemy import Integer, String, Column, ForeignKey
 
+
 class City(Base):
     """
     Class to represent a sql table called cities
