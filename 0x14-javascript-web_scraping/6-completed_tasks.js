@@ -8,20 +8,18 @@ request(url, function (error, response, body) {
     console.log(error);
   } else if (response.statusCode === 200) {
     const complete = {};
-    const work = JSON.parse(body);
+    const activities = JSON.parse(body);
 
-    for (const count in work) {
-      const temp = work[count];
-
-      if (temp.completed === true) {
-        if (complete[temp.userId] === undefined) {
-          complete[temp.userId] = 1;
+    for (const count in activities) {
+      const activity = activities[count];
+      if (activity.completed === true) {
+        if (complete[activity.userId] === undefined) {
+          complete[activity.userId] = 1;
         } else {
-          complete[temp.userId]++;
+          complete[activity.userId]++;
         }
       }
     }
-
     console.log(complete);
   }
 });
